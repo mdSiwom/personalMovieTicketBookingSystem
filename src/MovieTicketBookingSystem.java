@@ -31,43 +31,9 @@ public class MovieTicketBookingSystem {
 		shows.add(new Show("oppenheimer - Film", "22.11.2023", theatres.get(1)));
 		shows.add(new Show("Barbie - Film", "23.11.2023", theatres.get(2)));
 
-		// user login
-		String username;
-		String password;
 		boolean loggedIn = false;
-		boolean resetPassword = false;
 
-		do {
-			if (resetPassword) {
-				System.out.println("Forgot Password?");
-				System.out.println("Enter your username: ");
-				username = choice.nextLine();
-				System.out.print("Enter you email address to reset the password");
-				String email = choice.nextLine();
-
-				// logic to reset password and send an email
-				System.out.println("Password reset email sent to: " + email);
-				resetPassword = false;
-			} else {
-				System.out.println("Login: ");
-				System.out.println("Enter your username: ");
-				username = choice.nextLine();
-				System.out.println("Enter your password: ");
-				password = choice.nextLine();
-
-				// check credentials
-				if (username.equals("user_1") && password.equals("password123")) {
-					loggedIn = true;
-				} else {
-					System.out.println("Invalid credentials.");
-					System.out.print("Enter 1 for login or 2 to reset password: ");
-					int loginOption = select.nextInt();
-					if (loginOption == 2) {
-						resetPassword = true;
-					}
-				}
-			}
-		} while (!loggedIn);
+		
 
 		do {
 			System.out.println("------------------------------------");

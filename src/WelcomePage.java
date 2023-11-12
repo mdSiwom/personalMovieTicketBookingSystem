@@ -13,6 +13,7 @@ public class WelcomePage {
         welcomeLabel.setBounds(0, 0, 200, 35);
         welcomeLabel.setFont(new Font(null, Font.PLAIN, 25));
         welcomeLabel.setText("Hello " + userID);
+        welcomeLabel.setText("Hello " + userID);
 
         //defualt frame format
         frame.add(welcomeLabel);

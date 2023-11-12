@@ -5,7 +5,7 @@ import javax.swing.*;
 
 public class LoginPage implements ActionListener {
 
-    JFrame frame = new JFrame();
+    JFrame frame = new JFrame("Welcome to Eblaplex");
 
     JButton loginButton = new JButton("Login");
     JButton resetButton = new JButton("Reset");
@@ -14,15 +14,14 @@ public class LoginPage implements ActionListener {
 
     JPasswordField userPasswordField = new JPasswordField();
 
-    JLabel userIDLabel = new JLabel("userID:");
-    JLabel userPasswordLabel = new JLabel("password:");
+    JLabel userIDLabel = new JLabel("UserID : ");
+    JLabel userPasswordLabel = new JLabel("Password : ");
     JLabel messageLabel = new JLabel();
 
-    HashMap<String, String> logininfo = new HashMap<String, String>();
+    User[] logininfo = new User[4];
 
-    LoginPage(HashMap<String, String> loginInfoOriginal) {
-
-        logininfo = loginInfoOriginal;
+    LoginPage(User[] logininfoOriginal) {
+        logininfo = logininfoOriginal;
 
         userIDLabel.setBounds(50, 100, 75, 25);
         userIDField.setBounds(125, 100, 200, 25);
@@ -60,24 +59,27 @@ public class LoginPage implements ActionListener {
     @Override
 
     public void actionPerformed(ActionEvent e) {
+        // my code
         if (e.getSource() == loginButton) {
             String userID = userIDField.getText();
             String password = String.valueOf(userPasswordField.getPassword());
 
-            if (logininfo.containsKey(userID)) {
-                if (logininfo.get(userID).equals(password)) {
-                    messageLabel.setForeground(Color.green);
-                    messageLabel.setText("Login successful");
-                    frame.dispose();
-                    
-                    WelcomePage welcomePage = new WelcomePage(userID);
+            for (User user : logininfo) {
+                if (user.getUsername().equals(userID)) {
+                    if (user.getPassword().equals(password)) {
+                        messageLabel.setForeground(Color.green);
+                        messageLabel.setText("Login successful");
+                        frame.dispose();
+
+                        WelcomePage welcomePage = new WelcomePage(userID);
+                    } else {
+                        messageLabel.setForeground(Color.red);
+                        messageLabel.setText("Wrong password");
+                    }
                 } else {
-                    messageLabel.setForeground(Color.red);
-                    messageLabel.setText("Wrong password");
+                   messageLabel.setForeground(Color.red);
+                messageLabel.setText("username not found"); 
                 }
-            } else {
-                messageLabel.setForeground(Color.red);
-                messageLabel.setText("username not found");
             }
         }
 
