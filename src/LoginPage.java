@@ -65,20 +65,19 @@ public class LoginPage implements ActionListener {
             String password = String.valueOf(userPasswordField.getPassword());
 
             for (User user : logininfo) {
-                if (user.getUsername().equals(userID)) {
+                if (user.getUsername().equals(userID)) { // equal er method return niye jhamela ase; strings diye direct compare korle comments thik bhabe kaaj kore but user pass kore hche na; only login ta hoche
                     if (user.getPassword().equals(password)) {
                         messageLabel.setForeground(Color.green);
-                        messageLabel.setText("Login successful");
-                        frame.dispose();
-
-                        WelcomePage welcomePage = new WelcomePage(userID);
+                        messageLabel.setText("Login successful"); // ken jani dekhache na - 13.11.23 12.24 pm
+                        // frame.dispose();
+                        Homepage welcomePage = new Homepage(userID);
                     } else {
                         messageLabel.setForeground(Color.red);
-                        messageLabel.setText("Wrong password");
+                        messageLabel.setText("Wrong password"); // ken jani dekhache na - 13.11.23 12.24 pm
                     }
                 } else {
-                   messageLabel.setForeground(Color.red);
-                messageLabel.setText("username not found"); 
+                    messageLabel.setForeground(Color.red);
+                    messageLabel.setText("username not found");
                 }
             }
         }
