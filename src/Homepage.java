@@ -44,11 +44,13 @@ public class Homepage {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 800);
         frame.setLayout(null);
-        frame.setVisible(true);
+        
         welcomeBody.add(welcomeLabel);
         frame.add(header);
         frame.add(welcomeBody);
         frame.add(mainBody);
+
+        frame.setVisible(true);
 
     }
 
