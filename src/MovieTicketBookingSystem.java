@@ -35,6 +35,7 @@ public class MovieTicketBookingSystem {
 
 		
 
+		/* 
 		do {
 			System.out.println("------------------------------------");
 			System.out.println(":Movie Ticket Booking System:");
@@ -130,5 +131,6 @@ public class MovieTicketBookingSystem {
 				System.exit(0);
 			}
 		} while (true);
+		*/
 	}
 }
