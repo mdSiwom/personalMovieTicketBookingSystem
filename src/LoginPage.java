@@ -23,20 +23,20 @@ public class LoginPage implements ActionListener {
     LoginPage(User[] logininfoOriginal) {
         logininfo = logininfoOriginal;
 
-        userIDLabel.setBounds(50, 100, 75, 25);
-        userIDField.setBounds(125, 100, 200, 25);
+        userIDLabel.setBounds(250, 300, 75, 25);
+        userIDField.setBounds(325, 300, 200, 25);
 
-        userPasswordLabel.setBounds(50, 150, 75, 25);
-        userPasswordField.setBounds(125, 150, 200, 25);
+        userPasswordLabel.setBounds(250, 350, 75, 25);
+        userPasswordField.setBounds(325, 350, 200, 25);
 
-        messageLabel.setBounds(125, 250, 250, 35);
+        messageLabel.setBounds(325, 450, 250, 35);
         messageLabel.setFont(new Font(null, Font.ITALIC, 25));
 
-        loginButton.setBounds(125, 200, 100, 25);
+        loginButton.setBounds(325, 400, 100, 25);
         loginButton.setFocusable(false);
         loginButton.addActionListener(this);
 
-        resetButton.setBounds(225, 200, 100, 25);
+        resetButton.setBounds(425, 400, 100, 25);
         resetButton.setFocusable(false);
         resetButton.addActionListener(this);
 
@@ -50,7 +50,7 @@ public class LoginPage implements ActionListener {
 
         // default frame format
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(420, 420);
+        frame.setSize(800, 800);
         frame.setLayout(null);
         frame.setVisible(true);
 
@@ -69,7 +69,7 @@ public class LoginPage implements ActionListener {
                     if (user.getPassword().equals(password)) {
                         messageLabel.setForeground(Color.green);
                         messageLabel.setText("Login successful"); // ken jani dekhache na - 13.11.23 12.24 pm
-                        // frame.dispose();
+                        frame.dispose();
                         Homepage welcomePage = new Homepage(userID);
                     } else {
                         messageLabel.setForeground(Color.red);

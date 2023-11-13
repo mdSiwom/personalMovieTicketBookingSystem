@@ -11,7 +11,7 @@ public class IDandPasswords {
 		this.logininfo[0] = new User("Anika", "123");
 		this.logininfo[1] = new User("Ebadi", "123");
 		this.logininfo[2] = new User("Rose", "123");
-		this.logininfo[3] = new User("Siwom", "123");
+		this.logininfo[3] = new User("a", "a");
 	}
 
 	public User[] getLoginInfo() {
