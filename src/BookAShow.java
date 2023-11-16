@@ -13,8 +13,15 @@ public class BookAShow implements ActionListener {
     JRadioButton jawaanButton = new JRadioButton("jawaan");
     JRadioButton BarbieButton = new JRadioButton("Barbie");
     JRadioButton OppenheimerButton = new JRadioButton("Oppenheimer");
+    ArrayList<Customer> customers;
 
-    BookAShow() {
+    BookAShow(ArrayList<Customer> customers1) {
+        // database codes
+        customers = customers1;
+        Random rnd = new Random();
+        int costumerId = rnd.nextInt(999);
+        Customer customer = new Customer(costumerId);
+        customers.add(customer);
 
         // header
         header.setBackground(Color.RED);
@@ -69,7 +76,6 @@ public class BookAShow implements ActionListener {
         frame.add(header);
         frame.add(welcomeBody);
         frame.add(mainBody);
-        
 
         frame.setVisible(true);
     }
@@ -78,7 +84,7 @@ public class BookAShow implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == jawaanButton) {
             frame.dispose();
-            JawaanGui frameJawaanGui = new JawaanGui(); 
+            JawaanGui frameJawaanGui = new JawaanGui();
 
         } else if (e.getSource() == BarbieButton) {
             frame.dispose();

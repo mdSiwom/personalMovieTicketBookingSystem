@@ -3,9 +3,7 @@ import java.util.*;
 public class MovieTicketBookingSystem {
 	public static void main(String[] args) {
 
-		//GUI implementation
-		IDandPasswords idandPasswords = new IDandPasswords();
-		LoginPage loginPage = new LoginPage(idandPasswords.getLoginInfo());
+		
 
 
 		int option = 0;
@@ -30,7 +28,9 @@ public class MovieTicketBookingSystem {
 		shows.add(new Show("oppenheimer - Film", "22.11.2023", theatres.get(1)));
 		shows.add(new Show("Barbie - Film", "23.11.2023", theatres.get(2)));
 
-		boolean loggedIn = false;
+		//GUI implementation
+		IDandPasswords idandPasswords = new IDandPasswords();
+		LoginPage loginPage = new LoginPage(idandPasswords.getLoginInfo(), customers);
 
 		
 

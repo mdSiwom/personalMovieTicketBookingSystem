@@ -19,9 +19,11 @@ public class LoginPage implements ActionListener {
     JLabel messageLabel = new JLabel();
 
     User[] logininfo = new User[4];
+    ArrayList<Customer> customers;
 
-    LoginPage(User[] logininfoOriginal) {
+    LoginPage(User[] logininfoOriginal, ArrayList<Customer> customers1) {
         logininfo = logininfoOriginal;
+        customers = customers1;
 
         userIDLabel.setBounds(250, 300, 75, 25);
         userIDField.setBounds(325, 300, 200, 25);
@@ -70,7 +72,7 @@ public class LoginPage implements ActionListener {
                         messageLabel.setForeground(Color.green);
                         messageLabel.setText("Login successful"); // ken jani dekhache na - 13.11.23 12.24 pm
                         frame.dispose();
-                        Homepage welcomePage = new Homepage(userID);
+                        Homepage welcomePage = new Homepage(userID, customers);
                     } else {
                         messageLabel.setForeground(Color.red);
                         messageLabel.setText("Wrong password"); // ken jani dekhache na - 13.11.23 12.24 pm
