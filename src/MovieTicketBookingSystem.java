@@ -90,7 +90,7 @@ public class MovieTicketBookingSystem {
 					}
 				}
 				System.out.println("Costumer ID: " + customer.getId());
-				System.out.println("Total costs: " + totalCost + " Euro");
+				System.out.println("Total costs: " + totalCost + " Taka");
 				System.out.println();
 			} else if (option == 2) {
 				System.out.println("DISPLAY SHOWS Selected");

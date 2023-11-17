@@ -9,7 +9,7 @@ public class JawaanGui implements ActionListener {
     JPanel header = new JPanel();
     JPanel welcomeBody = new JPanel();
     JPanel mainBody = new JPanel();
-    JButton rowButton = new JButton("Row");
+    JButton rowButton = new JButton("Confirm");
     JButton resetButton = new JButton("Reset");
     JTextField rowField = new JTextField();
     JTextField seatField = new JTextField();
@@ -117,11 +117,9 @@ public class JawaanGui implements ActionListener {
             if (booking.reserveSeat(userIDInt - 1, passwordInt - 1)) {
             bookings.add(booking);
             messageLabel.setText("The seat is now reserved for you.");
-
-            // sample
-            frame.dispose();
-            Homepage welcomePage = new Homepage(userID, shows, theatres, bookings,
-            customers);
+                frame.dispose();
+                PayementGatewayGUI paymentFrame = new PayementGatewayGUI(bookings, customers, costumerId);
+            
             } else {
             messageLabel.setText("Sorry the seat is already reserved.");
             }

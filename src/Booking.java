@@ -12,9 +12,10 @@ public class Booking {
 
 	public int getCost() {
 		if (show.getTheatre().getRows().get(rowNumber).getRowClass() == 1) {
-			return cost += 8;
+			//1st class ticket price
+			return cost += 800;
 		} else {
-			return cost += 5;
+			return cost += 500;
 		}
 	}
 
