@@ -10,9 +10,16 @@ public class Homepage {
     JPanel header = new JPanel();
     JPanel welcomeBody = new JPanel();
     JPanel mainBody = new JPanel();
+    ArrayList<Show> shows;
+    ArrayList<Theatre> theatres;
+    ArrayList<Booking> bookings;
     ArrayList<Customer> customers;
 
-    Homepage(String userID, ArrayList<Customer> customers1) {
+    Homepage(String userID, ArrayList<Show> shows1, ArrayList<Theatre> theatres1, ArrayList<Booking> bookings1,
+            ArrayList<Customer> customers1) {
+        shows = shows1;
+        theatres = theatres1;
+        bookings = bookings1;
         customers = customers1;
 
         welcomeLabel.setBounds(0, 0, 800, 40);
@@ -43,7 +50,7 @@ public class Homepage {
             @Override
             public void mouseClicked(MouseEvent e) {
                 frame.dispose();
-                BookAShow bookAShow = new BookAShow(customers);
+                BookAShow bookAShow = new BookAShow(shows, theatres, bookings, customers);
             }
         });
 

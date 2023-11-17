@@ -13,15 +13,24 @@ public class BookAShow implements ActionListener {
     JRadioButton jawaanButton = new JRadioButton("jawaan");
     JRadioButton BarbieButton = new JRadioButton("Barbie");
     JRadioButton OppenheimerButton = new JRadioButton("Oppenheimer");
+    ArrayList<Show> shows;
+    ArrayList<Theatre> theatres;
+    ArrayList<Booking> bookings;
     ArrayList<Customer> customers;
+    int showNumber = 0;
+    
 
-    BookAShow(ArrayList<Customer> customers1) {
+    BookAShow(ArrayList<Show> shows1, ArrayList<Theatre> theatres1, ArrayList<Booking> bookings1,
+            ArrayList<Customer> customers1) {
         // database codes
+        shows = shows1;
+        theatres =theatres1;
+        bookings = bookings1;
         customers = customers1;
-        Random rnd = new Random();
-        int costumerId = rnd.nextInt(999);
-        Customer customer = new Customer(costumerId);
-        customers.add(customer);
+        
+        
+        
+        
 
         // header
         header.setBackground(Color.RED);
@@ -83,14 +92,20 @@ public class BookAShow implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == jawaanButton) {
+            showNumber =1;
+            String str = shows.get(showNumber).getTheatre().printSeatPlan();
             frame.dispose();
-            JawaanGui frameJawaanGui = new JawaanGui();
+            JawaanGui frameJawaanGui = new JawaanGui(shows, theatres, bookings, customers,showNumber, str);
 
         } else if (e.getSource() == BarbieButton) {
+            showNumber =2;
+            String str = shows.get(showNumber).getTheatre().printSeatPlan();
             frame.dispose();
             BarbieGui frameBarbieGui = new BarbieGui();
 
         } else if (e.getSource() == OppenheimerButton) {
+            showNumber = 3;
+            String str = shows.get(showNumber).getTheatre().printSeatPlan();
             frame.dispose();
             OppenheimerGui frameOppenheimerGui = new OppenheimerGui();
 

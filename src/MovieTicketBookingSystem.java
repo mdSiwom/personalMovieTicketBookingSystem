@@ -3,12 +3,6 @@ import java.util.*;
 public class MovieTicketBookingSystem {
 	public static void main(String[] args) {
 
-		
-
-
-		int option = 0;
-		Scanner select = new Scanner(System.in);
-		Scanner choice = new Scanner(System.in);
 		ArrayList<Show> shows = new ArrayList<Show>();
 		ArrayList<Theatre> theatres = new ArrayList<Theatre>();
 		ArrayList<Booking> bookings = new ArrayList<Booking>();
@@ -30,7 +24,7 @@ public class MovieTicketBookingSystem {
 
 		//GUI implementation
 		IDandPasswords idandPasswords = new IDandPasswords();
-		LoginPage loginPage = new LoginPage(idandPasswords.getLoginInfo(), customers);
+		LoginPage loginPage = new LoginPage(idandPasswords.getLoginInfo(), shows, theatres, bookings, customers);
 
 		
 
@@ -66,6 +60,8 @@ public class MovieTicketBookingSystem {
 				int showNumber = choice.nextInt();
 				int repeat = 0;
 				System.out.println();
+
+				//will print seatplan and execute options for that
 				do {
 					shows.get(showNumber - 1).getTheatre().printSeatPlan();
 					System.out.print("Enter the row: ");
