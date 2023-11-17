@@ -105,23 +105,7 @@ public class MovieTicketBookingSystem {
 				}
 				System.out.println("End of Show List.\n");
 			} else if (option == 3) {
-				System.out.println("CANCEL BOOKING Selected");
-				System.out.println("-------------------------\n");
-				System.out.print("Enter the costumer id: ");
-				int customerId = choice.nextInt();
-				for (Customer customer : customers) {
-					if (customer.getId() == customerId) {
-						for (Booking booking : bookings) {
-							if (booking.getCostumer().getId() == customer.getId()) {
-								if (booking.unreserveSeat()) {
-
-								}
-							}
-						}
-						System.out.println("Your reservation has been canceled!");
-					}
-				}
-				System.out.println();
+				
 			} else if (option == 4) {
 				System.exit(0);
 			}

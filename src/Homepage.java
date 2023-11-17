@@ -74,7 +74,7 @@ public class Homepage {
             @Override
             public void mouseClicked(MouseEvent e) {
                 frame.dispose();
-                CancelABooking cancelABooking = new CancelABooking(customers);
+                CancelABooking cancelABooking = new CancelABooking(bookings, customers);
             }
         });
 

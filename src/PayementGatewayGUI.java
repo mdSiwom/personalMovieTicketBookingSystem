@@ -19,7 +19,6 @@ public class PayementGatewayGUI implements ActionListener {
     JLabel userPasswordLabel = new JLabel("Password : ");
     JLabel messageLabel = new JLabel();
 
-    User[] logininfo = new User[4];
     ArrayList<Customer> customers;
 
     ArrayList<Booking> bookings;
@@ -33,7 +32,7 @@ public class PayementGatewayGUI implements ActionListener {
         customerid = costumerId1;
 
         payemntInfo.setBounds(250, 100, 450, 100);
-        //JTextArea textArea = new JTextArea();
+        // JTextArea textArea = new JTextArea();
 
         str += "Your Bill";
         str += "\n";
@@ -45,8 +44,7 @@ public class PayementGatewayGUI implements ActionListener {
             }
         }
         str += "Costumer ID: " + customerid;
-        str +="Total costs: " + totalCost + " Taka";
-       
+        str += "Total costs: " + totalCost + " Taka";
 
         // textArea.setText(str);
         payemntInfo.setText(str);
@@ -69,7 +67,6 @@ public class PayementGatewayGUI implements ActionListener {
         resetButton.addActionListener(this);
 
         // frame.add(textArea);
-        
 
         frame.add(payemntInfo);
         frame.add(userIDLabel);
@@ -91,34 +88,17 @@ public class PayementGatewayGUI implements ActionListener {
     @Override
 
     public void actionPerformed(ActionEvent e) {
-        // my code
         if (e.getSource() == loginButton) {
             String userID = userIDField.getText();
             String password = String.valueOf(userPasswordField.getPassword());
 
-            for (User user : logininfo) {
-                if (user.getUsername().equals(userID)) { // equal er method return niye jhamela ase; strings diye direct
-                                                         // compare korle comments thik bhabe kaaj kore but user pass
-                                                         // kore hche na; only login ta hoche
-                    if (user.getPassword().equals(password)) {
-                        messageLabel.setForeground(Color.green);
-                        messageLabel.setText("Login successful"); // ken jani dekhache na - 13.11.23 12.24 pm
-                        frame.dispose();
+            messageLabel.setForeground(Color.green);
+            messageLabel.setText("Payment successful");
 
-                    } else {
-                        messageLabel.setForeground(Color.red);
-                        messageLabel.setText("Wrong password"); // ken jani dekhache na - 13.11.23 12.24 pm
-                    }
-                } else {
-                    messageLabel.setForeground(Color.red);
-                    messageLabel.setText("username not found");
-                }
+            if (e.getSource() == resetButton) {
+                userIDField.setText("");
+                userPasswordField.setText("");
             }
-        }
-
-        if (e.getSource() == resetButton) {
-            userIDField.setText("");
-            userPasswordField.setText("");
         }
     }
 }
