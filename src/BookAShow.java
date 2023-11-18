@@ -86,20 +86,20 @@ public class BookAShow implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == jawaanButton) {
-            showNumber =0;
-            String str = shows.get(showNumber).getTheatre().printSeatPlan();
+            showNumber =1;
+            String str = shows.get(showNumber-1).getTheatre().printSeatPlan();
             frame.dispose();
             JawaanGui frameJawaanGui = new JawaanGui(shows, theatres, bookings, customers,showNumber, str);
 
         } else if (e.getSource() == BarbieButton) {
-            showNumber =1;
-            String str = shows.get(showNumber).getTheatre().printSeatPlan();
+            showNumber =2;
+            String str = shows.get(showNumber-1).getTheatre().printSeatPlan();
             frame.dispose();
             BarbieGui frameBarbieGui = new BarbieGui(shows, theatres, bookings, customers,showNumber, str);
 
         } else if (e.getSource() == OppenheimerButton) {
-            showNumber = 2;
-            String str = shows.get(showNumber).getTheatre().printSeatPlan();
+            showNumber = 3;
+            String str = shows.get(showNumber-1).getTheatre().printSeatPlan();
             frame.dispose();
             OppenheimerGui frameOppenheimerGui = new OppenheimerGui(shows, theatres, bookings, customers,showNumber, str);
 
