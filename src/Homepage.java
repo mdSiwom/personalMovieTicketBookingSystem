@@ -62,7 +62,7 @@ public class Homepage {
             @Override
             public void mouseClicked(MouseEvent e) {
                 frame.dispose();
-                DisplayShow displayAShow = new DisplayShow();
+                DisplayShow displayAShow = new DisplayShow(userID, shows, theatres, bookings, customers);
             }
         });
 

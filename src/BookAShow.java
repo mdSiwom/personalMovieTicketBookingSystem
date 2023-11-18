@@ -48,21 +48,15 @@ public class BookAShow implements ActionListener {
         mainBody.setLayout(new GridLayout(4, 01, 015, 015));
 
         JLabel label1 = new JLabel(new ImageIcon("jawaan.jpg"));
-        label1.setText("Jawaan");
-        label1.setText("Main Theatre");
-        label1.setText("21.11.23, time:4 30 pm, duration: 2 hrs");
+        label1.setText("Jawaan   Main Theatre   21.11.23, time:4 30 pm, duration: 2 hrs");
         label1.setHorizontalAlignment(JLabel.LEFT);
 
         JLabel label2 = new JLabel(new ImageIcon("barbie.jpg"));
-        label2.setText("Barbie");
-        label2.setText("Royal Theatre");
-        label2.setText("22.11.23, time:2 30 pm, duration: 1.5 hrs");
+        label2.setText("Barbie   Royal Theatre   22.11.23, time:2 30 pm, duration: 1.5 hrs");
         label2.setHorizontalAlignment(JLabel.LEFT);
 
-        JLabel label3 = new JLabel(new ImageIcon("oppenheimer.png"));
-        label3.setText("Oppenheimer");
-        label3.setText("Platinum Theatre");
-        label3.setText("23.11.23, time:6 30 pm, duration: 3 hrs");
+        JLabel label3 = new JLabel(new ImageIcon("oppen.jpg"));
+        label3.setText("Oppenheimer   Platinum Theatre   23.11.23, time:6 30 pm, duration: 3 hrs");
         label3.setHorizontalAlignment(JLabel.LEFT);
 
         welcomeBody.add(jawaanButton);
@@ -92,22 +86,22 @@ public class BookAShow implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == jawaanButton) {
-            showNumber =1;
+            showNumber =0;
             String str = shows.get(showNumber).getTheatre().printSeatPlan();
             frame.dispose();
             JawaanGui frameJawaanGui = new JawaanGui(shows, theatres, bookings, customers,showNumber, str);
 
         } else if (e.getSource() == BarbieButton) {
-            showNumber =2;
+            showNumber =1;
             String str = shows.get(showNumber).getTheatre().printSeatPlan();
             frame.dispose();
-            BarbieGui frameBarbieGui = new BarbieGui();
+            BarbieGui frameBarbieGui = new BarbieGui(shows, theatres, bookings, customers,showNumber, str);
 
         } else if (e.getSource() == OppenheimerButton) {
-            showNumber = 3;
+            showNumber = 2;
             String str = shows.get(showNumber).getTheatre().printSeatPlan();
             frame.dispose();
-            OppenheimerGui frameOppenheimerGui = new OppenheimerGui();
+            OppenheimerGui frameOppenheimerGui = new OppenheimerGui(shows, theatres, bookings, customers,showNumber, str);
 
         }
     }
